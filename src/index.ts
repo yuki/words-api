@@ -8,7 +8,22 @@ const PORT = Number(process.env.PORT) || 10000;
 
 app.get("/", (_req, res) => {
   res.json({
-    message: "Words API"
+    title: "Words API",
+    usage: {
+      "/api/all": "Devuelve todas las palabras",
+      "/api/word": {
+        description: "Devuelve palabras aleatorias según los parámetros de consulta",
+        parameters: {
+          lang: "Código de idioma (eu o es). Por defecto 'es'.",
+          length: "Longitud de las palabras (tiene que ser mayor que 3). Por defecto 6.",
+          number: "Número de palabras a devolver (tiene que ser 1 o mayor). Por defecto 1."
+        }
+      },
+      ejemplos: [
+        "/api/word?lang=eu&length=6&number=3",
+        "/api/word?lang=es&length=5&number=1"
+      ]
+    }
   });
 });
 
@@ -17,7 +32,7 @@ app.get("/api/all", (_req, res) => {
 });
 
 app.get("/api/word", (req, res) => {
-  const lang = req.query.lang as string;
+  const lang = req.query.lang as string || "es";
   const length = Number(req.query.length) || 6;
   const number = Number(req.query.number) || 1;
 
