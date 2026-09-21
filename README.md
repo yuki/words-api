@@ -29,15 +29,15 @@ npm install
 npm run dev
 ```
 
-El acceso por defecto es [http://localhost:3003](http://localhost:3003).
+El acceso por defecto es [http://0.0.0.0:10000](http://0.0.0.0:10000).
 
 
 ## Ejemplos
 
 A continuación varios ejemplos de peticiones:
 
-- `http://localhost:3003/api/all`: devuelve todas las palabras
-- `http://localhost:3003/api/word?lang=eu&length=4`: devuelve una palabra en euskera de 4 letras
-- `http://localhost:3003/api/word?lang=eu&length=7&number=3`: devuelve 3 palabras en euskera de 7 letras
-- `http://localhost:3003/api/word?lang=es&length=9&number=2`: devuelve dos palabra en castellano de 9 letras
+- `http://0.0.0.0:10000/api/all`: devuelve todas las palabras
+- `http://0.0.0.0:10000/api/word?lang=eu&length=4`: devuelve una palabra en euskera de 4 letras
+- `http://0.0.0.0:10000/api/word?lang=eu&length=7&number=3`: devuelve 3 palabras en euskera de 7 letras
+- `http://0.0.0.0:10000/api/word?lang=es&length=9&number=2`: devuelve dos palabra en castellano de 9 letras
 

@@ -1,9 +1,10 @@
 import express from "express";
 import { index } from "./words.js";
+import { parentPort } from "node:worker_threads";
 
 const app = express();
 
-const PORT = process.env.PORT || 3003;
+const PORT = Number(process.env.PORT) || 10000;
 
 app.get("/", (_req, res) => {
   res.json({
@@ -62,6 +63,6 @@ app.get("/api/word", (req, res) => {
   res.json(result);
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
 });
