@@ -1,8 +1,10 @@
 import express from "express";
+import cors from "cors";
 import { index } from "./words.js";
 import { parentPort } from "node:worker_threads";
 
 const app = express();
+app.use(cors());
 
 const PORT = Number(process.env.PORT) || 10000;
 
